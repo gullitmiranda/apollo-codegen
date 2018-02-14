@@ -54,9 +54,10 @@ export default class TypescriptGenerator {
     );
 
     if (description) {
+      const value = description.replace('\n', ' ').trim();
       typeAlias.leadingComments = [{
         type: 'CommentLine',
-        value: ` ${description.replace('\n', ' ')}`
+        value: ` ${value}`
       } as t.CommentLine];
     }
 
